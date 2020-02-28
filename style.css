@@ -1,0 +1,217 @@
+/*all*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-color: rgba(0,0,0,.2);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,.1);
+}
+::-webkit-scrollbar-button {
+    display: none;
+}
+::selection {
+	background-color: rgba(0,0,0,.7);
+	color: #fff;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: #333;
+	font-family: 'Montserrat', sans-serif;
+}
+a {
+	text-decoration: none;
+}
+li {
+	list-style: none;
+}
+.container {
+	position: relative;
+	margin: 0 auto;
+	width: 1400px;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+}
+.checked > * {
+	color: #000 !important;
+	font-weight: 400;
+}
+/*all*/
+
+/*left*/
+#left {
+	position: fixed;
+	width: 20%;
+	height: 100%;
+	background-color: #fff;
+}
+.menu-box {
+	position: absolute;
+	right: 50px;
+	top: 50%;
+	transform: translateY(-50%);
+	text-align: right;
+}
+.appearClass {
+	animation: appearMenu 1s forwards;
+	opacity: 0;
+}
+.logo.appearClass { animation-delay: 0s; }
+nav ul li.appearClass:nth-child(1) { animation-delay: .1s; }
+nav ul li.appearClass:nth-child(2) { animation-delay: .2s; }
+nav ul li.appearClass:nth-child(3) { animation-delay: .3s; }
+nav ul li.appearClass:nth-child(4) { animation-delay: .4s; }
+nav ul li.appearClass:nth-child(5) { animation-delay: .5s; }
+nav ul li.appearClass:nth-child(6) { animation-delay: .6s; }
+nav ul li.appearClass:nth-child(7) { animation-delay: .7s; }
+.social.appearClass { animation-delay: .8s; }
+
+@keyframes appearMenu {
+	0% {
+		margin-right: 100px;
+	}
+	100% {
+		opacity: 1;
+		margin-right: 0px;
+	}
+}
+.menu-box .logo {
+	font-size: 40px;
+	font-weight: 600;
+}
+.menu-box nav ul li {
+	cursor: pointer;
+	margin: 10px 0;
+}
+.menu-box nav ul li:hover > * {
+	color: #000;
+}
+.menu-box nav ul li span {
+	color: #999;
+	margin-left: 10px;
+	font-size: 11px;
+}
+.menu-box nav ul li a {
+	color: #999;
+}
+.menu-box .social .icon {
+	float: right;
+	margin: 10px;
+	cursor: pointer;
+}
+.menu-box .social .icon:hover i {
+	color: #000;
+}
+/*left*/
+
+/*right*/
+#right {
+	position: absolute;
+	right: 0;
+	width: 70%;
+	height: auto;
+	background-color: #fff;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 30px;
+}
+.line {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.card {
+	position: relative;
+	margin: 30px 0;
+	border-radius: 2px;
+	overflow: hidden;
+	opacity: 0;
+	animation: appear 1.5s forwards;
+}
+@keyframes appear {
+	0% {
+		transform: translateY(150px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+.card .image {
+	width: 100%;
+	overflow: hidden;
+}
+.card .image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.card .hidden-content {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,.25);
+	transition: all .4s;
+	opacity: 0;
+}
+.card .hidden-content .icon-box {
+	position: absolute;
+	right: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.card .hidden-content .icon-box .icon {
+	margin-right: 10px;
+	cursor: pointer;
+	margin: 10px;
+	padding: 6px 9px;
+	background-color: #eee;
+	border-radius: 4px;
+	user-select: none;
+}
+.card .hidden-content .icon span {
+	font-size: 12px;
+	padding-left: 5px;
+}
+.card .hidden-content .icon-box .icon i {
+	font-size: 15px;
+}
+.card .hidden-content .icon-box .icon:first-child i {
+	color: #f15151;
+}
+.card .hidden-content .tag-box {
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+}
+.card .hidden-content .tag-box .tag {
+	float: left;
+	font-size: 12px;
+	margin: 5px;
+	padding: 6px 9px;
+	background-color: #eee;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.card:hover .hidden-content {
+	opacity: 1;
+}
+.icon-box .likeAction {
+	background-color: #f15151 !important;
+	transition: all .4s;
+}
+.icon-box .likeAction i,
+.icon-box .likeAction span {
+	color: #fff !important;
+	transition: all .4s;
+}
+/*right*/
